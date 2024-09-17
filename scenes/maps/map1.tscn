@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://buvdvdq8jnu8c"]
+
+[ext_resource type="PackedScene" uid="uid://b2kc55m2lbbkp" path="res://assets/maps/city_prisma_3d/city_prisma_3d.gltf" id="1_ounb5"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_ounb5")]
+
+[node name="Object_10" parent="Sketchfab_model/City_obj_cleaner_materialmerger_gles" index="8"]
+visible = false
+
+[node name="Object_11" parent="Sketchfab_model/City_obj_cleaner_materialmerger_gles" index="9"]
+visible = false
+
+[node name="Object_12" parent="Sketchfab_model/City_obj_cleaner_materialmerger_gles" index="10"]
+visible = false
+
+[node name="Object_13" parent="Sketchfab_model/City_obj_cleaner_materialmerger_gles" index="11"]
+visible = false
+
+[node name="Object_14" parent="Sketchfab_model/City_obj_cleaner_materialmerger_gles" index="12"]
+visible = false

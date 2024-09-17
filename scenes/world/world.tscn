@@ -1,23 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://1d8h7r1pvaps"]
+[gd_scene load_steps=4 format=3 uid="uid://1d8h7r1pvaps"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_62eji"]
-[ext_resource type="Environment" uid="uid://cs0m1jhlpv3rp" path="res://scenes/world/day.tres" id="1_rsn58"]
+[ext_resource type="PackedScene" uid="uid://buvdvdq8jnu8c" path="res://scenes/maps/map1.tscn" id="2_8083m"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fcmac"]
-albedo_color = Color(0.344076, 0.344076, 0.344076, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_aqhx6"]
-material = SubResource("StandardMaterial3D_fcmac")
-size = Vector3(20, 1, 20)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7rwwr"]
-data = PackedVector3Array(-10, 0.5, 10, 10, 0.5, 10, -10, -0.5, 10, 10, 0.5, 10, 10, -0.5, 10, -10, -0.5, 10, 10, 0.5, -10, -10, 0.5, -10, 10, -0.5, -10, -10, 0.5, -10, -10, -0.5, -10, 10, -0.5, -10, 10, 0.5, 10, 10, 0.5, -10, 10, -0.5, 10, 10, 0.5, -10, 10, -0.5, -10, 10, -0.5, 10, -10, 0.5, -10, -10, 0.5, 10, -10, -0.5, -10, -10, 0.5, 10, -10, -0.5, 10, -10, -0.5, -10, 10, 0.5, 10, -10, 0.5, 10, 10, 0.5, -10, -10, 0.5, 10, -10, 0.5, -10, 10, 0.5, -10, -10, -0.5, 10, 10, -0.5, 10, -10, -0.5, -10, 10, -0.5, 10, 10, -0.5, -10, -10, -0.5, -10)
+[sub_resource type="BoxShape3D" id="BoxShape3D_uy3gj"]
+size = Vector3(100, 1, 100)
 
 [node name="world" type="Node3D"]
 script = ExtResource("1_62eji")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_rsn58")
 
 [node name="sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.0174524, 0.999848, 0, -0.999848, -0.0174524, 0, 11.2648, 0)
@@ -29,11 +21,65 @@ visible = false
 light_color = Color(0, 0.333955, 0.333955, 1)
 shadow_enabled = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="part1" type="StaticBody3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("BoxMesh_aqhx6")
-skeleton = NodePath("../..")
+[node name="Sketchfab_Scene" parent="part1" instance=ExtResource("2_8083m")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_7rwwr")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="part1"]
+shape = SubResource("BoxShape3D_uy3gj")
+
+[node name="part4" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.999848, 0, -0.0174524, 0, 1, 0, 0.0174524, 0, -0.999848, 99.2153, 0, -60.6085)
+
+[node name="Sketchfab_Scene" parent="part4" instance=ExtResource("2_8083m")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="part4"]
+shape = SubResource("BoxShape3D_uy3gj")
+
+[node name="part5" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 117.615, 0, -161.323)
+
+[node name="Sketchfab_Scene" parent="part5" instance=ExtResource("2_8083m")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="part5"]
+shape = SubResource("BoxShape3D_uy3gj")
+
+[node name="part3" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -100.009, 0, -19.5748)
+
+[node name="Sketchfab_Scene" parent="part3" instance=ExtResource("2_8083m")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="part3"]
+shape = SubResource("BoxShape3D_uy3gj")
+
+[node name="part2" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.999998, 0, -0.00174537, 0, 1, 0, 0.00174537, 0, -0.999998, 2.3, 0, -100.032)
+
+[node name="Sketchfab_Scene" parent="part2" instance=ExtResource("2_8083m")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="part2"]
+shape = SubResource("BoxShape3D_uy3gj")
+
+[node name="part7" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.999998, 0, -0.00174537, 0, 1, 0, 0.00174537, 0, -0.999998, -86.7936, 0, -218.662)
+
+[node name="Sketchfab_Scene" parent="part7" instance=ExtResource("2_8083m")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="part7"]
+shape = SubResource("BoxShape3D_uy3gj")
+
+[node name="part8" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.4367, 0, -236.093)
+
+[node name="Sketchfab_Scene" parent="part8" instance=ExtResource("2_8083m")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="part8"]
+shape = SubResource("BoxShape3D_uy3gj")
+
+[node name="part6" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -110.035, 0, -119.4)
+
+[node name="Sketchfab_Scene" parent="part6" instance=ExtResource("2_8083m")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="part6"]
+shape = SubResource("BoxShape3D_uy3gj")

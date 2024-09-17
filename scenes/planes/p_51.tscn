@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpnfxiebktu68"]
+
+[ext_resource type="PackedScene" uid="uid://c7pogkv8f8u3f" path="res://assets/planes/p-51_jet_plane.glb" id="1_ha26n"]
+
+[node name="p_51" instance=ExtResource("1_ha26n")]

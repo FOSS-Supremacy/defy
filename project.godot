@@ -21,6 +21,7 @@ driver/enable_input=true
 
 [filesystem]
 
+import/fbx2gltf/enabled=false
 import/blender/enabled=false
 import/fbx/enabled=false
 

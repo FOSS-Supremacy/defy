@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://y4cdq7xff5o8"]
+
+[ext_resource type="PackedScene" uid="uid://dyjwq6nhk6l3" path="res://assets/cars/porshe.glb" id="1_yv5l6"]
+
+[node name="porshe" instance=ExtResource("1_yv5l6")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.445183, 0)
